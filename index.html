@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="script.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bresenham Line Drawing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="filtersWrapper">
+        <label for="x0">x0:</label>
+        <input type="number" name="x0" id="x0" onchange="onDrawLineBresenham()" min="0" max="899">
+    
+        <label for="y0">y0:</label>
+        <input type="number" name="y0" id="y0" onchange="onDrawLineBresenham()" min="0" max="599">
+    
+        <label for="x1">x1:</label>
+        <input type="number" name="x1" id="x1" onchange="onDrawLineBresenham()" min="0" max="899">
+    
+        <label for="y1">y1:</label>
+        <input type="number" name="y1" id="y1" onchange="onDrawLineBresenham()" min="0" max="599">
+    
+        <label for="thickness">Thickness:</label>
+        <input type="range" name="thickness" id="thickness" min="1" max="50" onchange="onDrawLineBresenham()">
+    
+        <label for="color">Color:</label>
+        <input type="color" name="color" id="color" onchange="onDrawLineBresenham()">
+
+        <button onclick="draw()"></button>
+    </div>
+    
+    <canvas id="myCanvas" width="900" height="600"></canvas>
+
+    <script defer src="script.js"></script>
+</body>
 </html>
